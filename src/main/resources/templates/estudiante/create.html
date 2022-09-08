@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/241b032331.js" crossorigin="anonymous"></script>
+    <title>Estudiante</title>
+</head>
+<body>
+<header>
+    Logo
+</header>
+<section>
+    <div class="card m-2">
+        <div class="card-header text-bg-danger">
+            Nuevo Estudiante
+        </div>
+        <div class="card-body">
+            <form th:action="@{/estudiante/guardar}" th:object="${estudiante}" method="post">
+                <div class="row m-2">
+                    <div class="col-6 text-end">
+                        Identificación:
+                    </div>
+                    <div class="col-6">
+                        <input type="number" th:field="*{ide_estu}" class="form-control" placeholder="Digite aqui su cedula" required>
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-6 text-end">
+                        Nombre:
+                    </div>
+                    <div class="col-6">
+                        <input type="text" th:field="*{nom_estu}" class="form-control" placeholder="Digite aqui su nombre" required>
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-6 text-end">
+                        Fecha nacimiento:
+                    </div>
+                    <div class="col-6">
+                        <input type="date" th:field="*{fna_estu}" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-6 text-end">
+                        Género:
+                    </div>
+                    <div class="col-6">
+                        <select th:field="*{gen_estu}" class="form-control" required>
+                            <option value="M">M</option>
+                            <option value="M">F</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-6 text-end">
+                        Dirección:
+                    </div>
+                    <div class="col-6">
+                        <input type="text" th:field="*{dir_estu}" class="form-control" placeholder="Digite aqui su dirección" required>
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-6 text-end">
+                        Teléfono:
+                    </div>
+                    <div class="col-6">
+                        <input type="number" th:field="*{tel_estu}" class="form-control" placeholder="Digite aqui su teléfono" required>
+                    </div>
+                </div>
+
+                <div class="row m-2">
+                    <div class="col-6 text-end">
+                        <a href="list">
+                            <button type="button" class="btn btn-outline-secondary">
+                                <i class="fa-solid fa-arrow-rotate-left"></i>
+                            </button>
+                        </a>
+
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-outline-primary">
+                            <i class="fa-regular fa-floppy-disk"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>
