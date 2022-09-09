@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Getter
 @Setter
@@ -13,10 +13,10 @@ import java.util.Date;
 public class Estudiante {
     //Definir los atributos
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ide_estu;
     private String nom_estu;
-    @Temporal(TemporalType.DATE)
+
     private Date fna_estu;
     private String gen_estu;
     private String dir_estu;

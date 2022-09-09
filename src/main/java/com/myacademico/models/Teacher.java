@@ -3,7 +3,11 @@ package com.myacademico.models;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
-import java.util.Date;
+
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import java.sql.Date;
+
 
 @Getter
 @Setter
@@ -17,4 +21,7 @@ public class Teacher {
     private String phone;
     private String email;
     private String matter;
+
+    private Date fecha;
+
 }

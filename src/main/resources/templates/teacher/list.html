@@ -47,7 +47,7 @@
                     Profesor
                 </div>
                 <div class="col-3 text-end">
-                    <a href="create.html">
+                    <a href="create">
                         <button type="button" class="btn btn-outline-primary btn-lg">
                             <i class="fa-solid fa-address-book"></i>
                         </button>
@@ -73,9 +73,11 @@
                         <th scope="row" th:text="${profesor.code}"></th>
                         <td th:text="${profesor.name}"></td>
                         <td th:text="${profesor.phone}"></td>
-                        <td th:text="${profesor.email}"><img src="${profesor.email}"></td>
+                        <td th:text="${profesor.email}"></td>
                         <td>
-                            <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-pencil"></i></button>
+                            <a href="edit">
+                                <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-pencil"></i></button>
+                            </a>
 
                             <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
                         </td>

@@ -15,7 +15,7 @@ public class TeacherService {
         return repository.findAll();
     }
 
-       public Teacher Guardar(Teacher teacher)
+    public Teacher Guardar(Teacher teacher)
     {
         return repository.save(teacher);
     }

@@ -16,5 +16,24 @@ public class EstudianteService {
         return repository.findAll();
     }
 
+    //Crear metodo para guardar
+    public Estudiante Guardar(Estudiante estudiante){
+        return repository.save(estudiante);
+    }
+    //Buscar
+    public Estudiante BuscarById(Integer id){
+        return repository.findById(id).get();
+    }
+
+    //Eliminar
+    public void Eliminar(Integer id){
+        repository.deleteById(id);
+
+    }
+
+
+
+
+
 
 }

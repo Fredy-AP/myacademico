@@ -15,27 +15,33 @@ public class TeacherController {
     //Mapear la ruta para mostras el listado de profesores
     @Autowired
     TeacherService service;
+
     @Autowired
     MateriaService materiaService;
+
     @GetMapping({"/profesor/list"})
     public String Listar(Model model){
         model.addAttribute("profesores",service.Listar());
         return "/teacher/list";
     }
 
-    @GetMapping({"/teacher/create"})
-    public String nuevo(Model model){
+    //Ruta para formulario Nuevo
+    @GetMapping({"/profesor/create"})
+    public String Nuevo(Model model){
         Teacher teacher= new Teacher();
         model.addAttribute("teacher",teacher);
-        model.addAttribute("materias",materiaService.Listar());
         return "/teacher/create";
     }
 
-    @PostMapping("/teacher/guardar")
+    //Ruta para guardar
+    @PostMapping({"/profesor/guardar"})
     public String Guardar(@ModelAttribute("teacher") Teacher teacher){
+
         service.Guardar(teacher);
         return "redirect:/profesor/list";
     }
+
+
 
 
 }
