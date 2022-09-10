@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -33,13 +34,28 @@ public class TeacherController {
         return "/teacher/create";
     }
 
-    //Ruta para guardar
+    //Ruta para guardar y actualiza
     @PostMapping({"/profesor/guardar"})
     public String Guardar(@ModelAttribute("teacher") Teacher teacher){
-
         service.Guardar(teacher);
         return "redirect:/profesor/list";
     }
+
+    //Metodo para editar
+    @GetMapping({"/profesor/edit/{id}"})
+    public String Editar(@PathVariable int id,Model model){
+        Teacher teacher= service.BuscarById(id);
+        model.addAttribute("teacher",teacher);
+        return "/teacher/create";
+    }
+
+    @GetMapping({"/profesor/delete/{id}"})
+    public String Eliminar(@PathVariable int id){
+        service.Eliminar(id);
+        return "redirect:/profesor/list";
+    }
+
+
 
 
 

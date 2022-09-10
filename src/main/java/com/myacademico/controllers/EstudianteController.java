@@ -33,25 +33,24 @@ public class EstudianteController {
     //Ruta para guardar los datos
     @PostMapping({"/estudiante/guardar"})
     public String Guardar(@ModelAttribute("estudiante") Estudiante estudiante){
-        String nombre=estudiante.getNom_estu();
-        estudiante.setNom_estu(nombre);
-
         service.Guardar(estudiante);
         return "redirect:/estudiante/list";
     }
 
-    //Ruta para formulario de Editar
+    //Ruta para editar
     @GetMapping({"/estudiante/edit/{id}"})
-    public String Edit(@PathVariable int id, Model model){
+    public String Editar(@PathVariable int id,Model model){
         Estudiante estudiante= service.BuscarById(id);
         model.addAttribute("estudiante",estudiante);
         return "/estudiante/create";
     }
-    //Rura para evento de eliminar
 
-
-
-
+    //Ruta para eliminar
+    @GetMapping({"/estudiante/eliminar/{id}"})
+    public String Eliminar(@PathVariable int id){
+        service.Eliminar(id);
+        return "redirect:/estudiante/list";
+    }
 
 
 

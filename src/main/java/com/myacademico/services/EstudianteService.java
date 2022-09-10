@@ -11,24 +11,25 @@ import java.util.List;
 public class EstudianteService {
     @Autowired
     EstudianteRepository repository;
-
+    //CRUD
+    //Metodo Listar Read
     public List<Estudiante> Listar(){
         return repository.findAll();
     }
 
-    //Crear metodo para guardar
+    //Crear metodo para guardar y Actualizar Create and Update
     public Estudiante Guardar(Estudiante estudiante){
         return repository.save(estudiante);
     }
-    //Buscar
+
+    //Metodo Buscar por Id Delete
     public Estudiante BuscarById(Integer id){
         return repository.findById(id).get();
     }
 
-    //Eliminar
+    //Metodo Eliminar
     public void Eliminar(Integer id){
         repository.deleteById(id);
-
     }
 
 

@@ -75,7 +75,7 @@
                         <td th:text="${profesor.phone}"></td>
                         <td th:text="${profesor.email}"></td>
                         <td>
-                            <a href="edit">
+                            <a th:href="@{edit/{id}(id=${profesor.code})}">
                                 <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-pencil"></i></button>
                             </a>
 

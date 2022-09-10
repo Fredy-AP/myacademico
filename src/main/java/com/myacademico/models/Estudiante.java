@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Date;
 
+
 @Getter
 @Setter
 @Entity
@@ -16,7 +17,6 @@ public class Estudiante {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ide_estu;
     private String nom_estu;
-
     private Date fna_estu;
     private String gen_estu;
     private String dir_estu;
