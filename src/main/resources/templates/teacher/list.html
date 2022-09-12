@@ -78,8 +78,9 @@
                             <a th:href="@{edit/{id}(id=${profesor.code})}">
                                 <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-pencil"></i></button>
                             </a>
-
-                            <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
+                            <a th:href="@{eliminar/{id}(id=${profesor.code})}">
+                                <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
+                            </a>
                         </td>
                     </tr>
                 </tbody>

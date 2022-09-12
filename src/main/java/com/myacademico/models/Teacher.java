@@ -12,7 +12,7 @@ import java.sql.Date;
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int code;
+    private Long code;
     private String name;
     private String phone;
     private String email;

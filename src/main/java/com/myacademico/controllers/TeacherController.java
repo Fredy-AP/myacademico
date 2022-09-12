@@ -49,7 +49,7 @@ public class TeacherController {
         return "/teacher/create";
     }
 
-    @GetMapping({"/profesor/delete/{id}"})
+    @GetMapping({"/profesor/eliminar/{id}"})
     public String Eliminar(@PathVariable int id){
         service.Eliminar(id);
         return "redirect:/profesor/list";
