@@ -20,7 +20,7 @@ public class TeacherController {
     @Autowired
     MateriaService materiaService;
 
-    @GetMapping({"/profesor/list"})
+    @GetMapping({"/profesor/list","/profesor"})
     public String Listar(Model model){
         model.addAttribute("profesores",service.Listar());
         return "/teacher/list";
@@ -31,6 +31,10 @@ public class TeacherController {
     public String Nuevo(Model model){
         Teacher teacher= new Teacher();
         model.addAttribute("teacher",teacher);
+
+        //Llenar lista o Combobox
+        model.addAttribute("materias",materiaService.Listar());
+
         return "/teacher/create";
     }
 
@@ -46,6 +50,8 @@ public class TeacherController {
     public String Editar(@PathVariable int id,Model model){
         Teacher teacher= service.BuscarById(id);
         model.addAttribute("teacher",teacher);
+        //Llenar lista o Combobox
+        model.addAttribute("materias",materiaService.Listar());
         return "/teacher/create";
     }
 
